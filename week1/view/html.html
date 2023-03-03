@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+        select{
+            width: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="text1"><br>
+        <input type="text" id="text2"><br>
+        <select id="opt">
+            <option value="post">post</option>
+            <option value="get">get</option>
+            <option value="put">put</option>
+            <option value="delete">delete</option>
+            <option value="null">null</option>
+        </select><br>
+        <button type="button" onclick="exec()">click me</button>
+        <button type="button" onclick="exec_post()">POST test</button>
+        <hr>
+        <h3>Output</h3>
+        <div id="div1"></div>
+    </div>
+</body>
+</html>

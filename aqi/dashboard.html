@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="chart-container" style="position: relative; height: 40vh; width: 80vw; margin: auto; width: 600px;">
+    <canvas id="myChart"></canvas><br><br>
+    <div style="text-align: center;">
+        <select id="station">
+            <option value="1">a</option>
+            <option value="2">b</option>
+            <option value="3">c</option>
+            <option value="4">d</option>
+            <option value="5">e</option>
+        </select><br>
+        <button onclick="RefreshData()">+ Add Data</button>
+        <button onclick="ToStation()">station</button>
+        <p id="showPM">0</p>
+    </div>
+</div>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- <script src="script.js"></script> -->
+
+<script>
+const ctx = document.getElementById('myChart');
+const counter = {
+    id: 'counter',
+    beforeDraw(chart, args, options){
+        const{
+            ctx, 
+            chartArea: {top, right, buttom, left, width, height}
+        } = chart
+        ctx.save()
+        ctx.font = options.fontSize + 'px ' + options.fontFamily
+        ctx.textAlign = 'center'
+        ctx.fillStyle = options.fontColor
+        ctx.fillText(chart.data.datasets[1].data[0], width/2, top + (height/2)+ 80)
+    }
+}
+// var c1 = 'gray'
+var pm25 = 0
+var getShow
+const mixedChart = new Chart(ctx, {
+    data: {
+        datasets: [
+            {
+                type: 'doughnut',
+                label: 'Gauge indicator',
+                data: [50,50,50,50,100,50],
+                backgroundColor: ['green', 'yellow'
+                    , 'orange', 'red', 'purple', 'maroon']
+            },{
+                type: 'doughnut',
+                label: 'Gauge level',
+                data: [pm25,pm25-350],
+                backgroundColor: ['gray', 'gainsboro']
+            }
+        ],
+        labels: ['Good','Moderate',
+                'Unhealthy for Sensitive Groups',
+                'Unhealthy','Very Unhealthy','Hazardous']
+    },
+    options: {
+        circumference: 180,
+        rotation: 180 + 90,
+        plugins: {
+            counter: {
+                fontSize: '60',
+                fontFamily: 'sans-serif'
+            }
+        }
+    },
+    plugins: [counter],
+})
+function RefreshData(data=1){
+    key = Object.keys(Chart.instances)[0]
+    chart = Chart.instances[key]
+
+    let stt = document.getElementById('station').value
+    fetch('sensor.php?locat='+ stt) //link php
+    
+    document.getElementById("showPM").innerHTML = getShow
+
+    pm25 = getShow
+    // pm25 = Math.floor(Math.random() * 350)
+    chart.data['datasets'][1].data[0] = Math.floor(pm25)
+    chart.data['datasets'][1].data[1] = 350-Math.floor(pm25)
+
+
+    if(pm25>300){
+        chart.data.datasets[1].backgroundColor[0] = 'maroon'
+    }
+    else if(pm25>200){
+        chart.data.datasets[1].backgroundColor[0] = 'purple'
+    }
+    else if(pm25>150){
+        chart.data.datasets[1].backgroundColor[0] = 'red'
+    }
+    else if(pm25>100){
+        chart.data.datasets[1].backgroundColor[0] = 'orange'
+    }
+    else if(pm25>50){
+        chart.data.datasets[1].backgroundColor[0] = 'yellow'
+    }else{
+        chart.data.datasets[1].backgroundColor[0] = 'green'
+    }
+    chart.update()
+}
+function ToStation(){
+    window.location.href = ('station.html')
+}
+</script>

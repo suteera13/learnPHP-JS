@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>CSS Ex</title>
+    <style>
+        body{
+            color: red;
+        }
+        .header{
+            padding: 40px;
+            background-image: linear-gradient(to right, rgb(255, 102, 0),  yellow);
+            border-radius: 50px 50px 0px 0px;
+        }
+        h1{
+            text-align: center;
+        }
+        h2, h5{
+            color: rgb(119, 82, 64);
+        }
+        .nav{
+            overflow: hidden;
+            background-color: green;
+        }
+        .nav a{
+            display: block;
+            color: aqua;
+            float: left;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+        .nav a:hover{
+            color: red;
+            text-decoration: underline;
+            background-color: black;
+        }
+        .img{
+            background-color: lightgray;
+            width: 90%;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+        .card{
+            border-radius: 25px 50px 0px 25px;
+            background-color: aquamarine;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .leftcol{
+            float: left;
+            width: 75%;
+        }
+        .rightcol{
+            float: left;
+            width: 22%;
+            padding-left: 20px;
+        }
+        .row::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* if max-width < 800 */
+        @media screen and (max-width:800px) {
+            .leftcol, .rightcol{
+                width: 100%;
+                padding: 0;
+            }
+        }
+        .footer{
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Header</h1>
+    </div>
+    <div class="nav">
+        <a href="#">link1</a>
+        <a href="#">link1</a>
+        <a href="#">link1</a>
+        <a href="#" style="float: right;">link4</a>
+        <a href="#" style="float: right;">link5</a>
+    </div>
+    <div class="row">
+        <div class="leftcol">
+            <div class="card">
+                <h2>title header</h2>
+                <h5>decoration</h5>
+                <div class="img" style="height: 200px;"></div>
+                <p>Lorem</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel nulla dolorum, sit reiciendis cupiditate quae consectetur. Voluptate minus alias officiis accusantium voluptatibus, nam exercitationem iste, atque deserunt totam incidunt minima?</p>
+            </div>
+            <div class="card">
+                <h2>title header</h2>
+                <h5>decoration</h5>
+                <div class="img" style="height: 200px;"></div>
+                <p>Lorem</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos quae vitae sapiente, animi quo itaque? Iste atque sunt doloribus aperiam?</p>
+            </div>
+        </div>
+        <div class="rightcol">
+            <div class="card">
+                <h2>About me</h2>
+                <div class="img" style="height: 100px; padding: 20px;">my logo</div>
+                <p>address : Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, corrupti.</p>
+            </div>
+            <div class="card">
+                <h2>Popular image</h2>
+                <div class="img">img 1</div>
+                <div class="img">img 2</div>
+                <div class="img">img 3</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>footer</h2>
+    </div>
+</body>
+</html>

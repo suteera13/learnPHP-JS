@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      font-family: sans-serif;
+    }
+    .header{
+      padding: 40px;
+      text-align: center;
+      background-color: lightgray;
+    }
+    .next{
+      padding-inline: 100px;
+      font-size: 14px;
+      color: black;
+      font-style: unset;
+      text-decoration: none;
+      transition: 0.4s;
+    }
+    .next:hover{
+      font-size: 16px;
+      color: darkblue;
+    }
+    .nav{
+      display: table;
+      margin: 1% 10% 0% 10%;
+      width: 80%;
+      border: solid 1px lightgrey;
+      border-radius: 5px;
+    }
+    .col15{
+      float: left;
+      width: 15%;
+    }
+    
+    .tab{
+      display: block;
+      padding: 20px 20px 20px 40px;
+      text-decoration: none;
+      color: black;
+    }
+    .tab:hover{
+      background: lightgray;
+    }
+    .col80{
+      float: left;
+      padding: 10px 40px;
+      width: 75%;
+      height: 500px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      
+    }
+    *::-webkit-scrollbar {
+      width: 5px;
+    }
+    *::-webkit-scrollbar-thumb {
+      background-color: lightgray;
+      border-radius: 10px;
+    }
+    .col80 > div{
+      display: none;
+    }
+    .col80 > div:target{
+      display: block;
+    }
+    img{
+      height: 300px;
+      width: 100%;
+      object-fit: cover;
+    }
+    #more {
+      display: none;
+    }
+    #more2 {
+      display: none;
+    }
+    #more3 {
+      display: none;
+    }
+    #more4 {
+      display: none;
+    }
+    p{
+      padding-left: 10px;
+      width: 80%;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>
+      <a href="about.html" class="next">about me</a>
+      อาหาร 4 ภาค
+      <a href="pet.html" class="next">สัตว์เลี้ยงน่ารัก</a>
+    </h2>
+  </div>
+  <div class="nav">
+    <div class="col15">
+      <a href="#p1" class="tab"> อาหารภาคกลาง </a>
+      <a href="#p2" class="tab"> อาหารภาคเหนือ </a>
+      <a href="#p3" class="tab"> อาหารภาคใต้ </a>
+      <a href="#p4" class="tab"> อาหารภาคอิสาน </a>
+    </div>
+    <div class="col80">
+      <div id="p1">
+        <h3>อาหารภาคกลาง</h3>
+        <img src="https://numsups.com/wp-content/uploads/2021/05/dFQROr7oWzulq5FZUIa9HwOmRWhygcmruZtoOxGJs1SIiwTyKn5cHAAbtaK0gHWUOOv.jpg" 
+        height="300px" width="600" onclick="myFunction1()" id="myBtn">
+        <!-- <span id="dots">...</span> -->
+        <div id="more">
+          <br><br><h4> ต้มยำกุ้ง </h4>
+          ส่วนผสมสำหรับทำต้มยำกุ้งน้ำค้น
+          <p>
+            กุ้งกุลาดำตัวใหญ่ 4 – 5 ตัว(เลือกกุ้งตัวใหญ่ขนาดผ่ามือ)
+            <br>เห็ดโคน ผ่าครึ่ง 5 หัว <br>น้ำพริกเผา 1 ช้อนโต้ะ <br>น้ำปลา 1 ช้อนโต้ะ
+            <br>น้ำมะขามเปียก 1 ช้อนโต้ะ <br>น้ำมะนาว 1 ช้อนโต้ะ <br>พริกขี้หนูสวนบด 1 ช้อนโต้ะ
+            <br>นมค้นจืด 1 ช้อนโต้ะ <br>ใบมะกรูดฉีก 3 ใบ <br>น้ำซุปกระดูกหมู 2 ถ้วย
+            <br>ข่าแก่ หั่นเป็นชิ้น 3 ชิ้น <br>ตะไคร้ หั่นเป็นท่อน 3 ชิ้น <br>หอมแดง ผ่าครึ่ง 2 ลูก
+            <br>ผักชีฝรั่ง ซอยหยาบ 2 ช้อนโต้ะ<br>
+          </p>
+          <br>วิธีทำต้มยำกุ้งน้ำค้น
+          <p>
+            - เริ่มต้นทำโดยการ ต้มน้ำซุปกระดูกหมูให้ร้อน จากนั้นหรี่ไฟลง ใส่ ข่า ตะไคร้ และ ใบมะกรูด สำหรับใบมะกรูดให้ฉีกใบและเอาแกนใบออก ต้มด้วยไฟอ่อนๆ เพื่อให้สมุนไพรส่งกลิ่นหอมออกมาอย่างเต็มที่
+            <br>- ต่อมา ปรุงรสด้วย พริกขี้หนูสวน น้ำปลา น้ำมะขามเปียก และ น้ำพริกเผา ชิมรสให้ได้รสชาติโดยรสชาติจะขาดเปรี้ยวอีกหน่อย เพราะจะต้องใส่น้ำมะนาวอีก
+            <br>- ใส่เห็ด และ หอมแดง ลงไปต้มต่อ
+            <br>- ใส่กุ้งลงไปต้ม เมื่อกุ้งเริ่มสุก ให้ปิดไฟ ใส่นมค้นจืด น้ำมะนาว และ ผักชีฝรั่งลงไปผสมในน้ำแกง เท่านี้ก็สามารถเสริฟใส่ชามพร้อมรับประทานได้
+          </p>
+        </div>
+      </div>
+      <div id="p2">
+        <h3>อาหารภาคเหนือ</h3>
+        <img src="https://th.bing.com/th/id/R.1798d3ee9e56e1391b3d4501e0adafbb?rik=eLo0GgNaIubdaw&riu=http%3a%2f%2fimages.thaiza.com%2fcontent%2fb%2f270228.jpg&ehk=UmOI%2bs4D8WLaax4VxJsbz%2fZohpg759tthBniyJVIki0%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" 
+        height="300px" width="600" onclick="myFunction2()" id="myBtn2">
+        <!-- <span id="dots">...</span> -->
+        <div id="more2">
+          <br><br><h4> น้ำพริกตาแดง </h4>
+          ส่วนผสมสำหรับน้ำพริกตาแดง
+          <p>
+            พริกแห้ง 8 เม็ด<br> หอมแดง 6 หัว <br>กระเทียม 4 หัว
+            กะปิ 1 ช้อนชา<br>เนื้อปลาร้าสับ 1 ช้อนโต๊ะ<br>เนื้อปลาย่าง 4 ช้อนโต๊ะ<br>
+          </p>
+          <br>วิธีทำน้ำพริกตาแดง
+          <p>
+            - นำ หอมแดง และ กระเทียม ไปย่างไฟ และ นำใบตองห่อ ปลาร้า และ กะปิ ย่างไฟ<br>
+            - เตรียมครก โขรก พริกแห้ง หอมแดง กระเทียม กะปิ ปลาร้า และ เนื้อปลาย่าง ให้ละเอียดเข้ากัน<br>
+            - เสริฟน้ำพริกทานกับผักสด กับข้าว อาหารเหนือ เมนูสุขภาพ<br>
+          </p>
+        </div>
+      </div>
+      <div id="p3">
+        <h3>อาหารภาคเหนือ</h3>
+        <img src="https://th.bing.com/th/id/R.d108e3992e08fd68a0c4382cd725aaeb?rik=Nq8WP6kzyL1KkA&riu=http%3a%2f%2fwww.baannoi.com%2fimages%2ffood%2fbaannoi1.jpg&ehk=B0NRwKVTd1sc%2bnjdeQCtHLTSWr8ocPR9GAXYV7J%2b9mE%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" 
+        height="300px" width="600" onclick="myFunction3()" id="myBtn3">
+        <!-- <span id="dots">...</span> -->
+        <div id="more3">
+          <br><br><h4> แกงไตปลา </h4>
+          ส่วนผสมสำหรับทำแกงไตปลา
+          <p>
+            ไตปลา ครึ่ง ถ้วย<br> ปลาดุก 1 ตัว<br> ถั่วฝักยาว 2 ฝัก นำมาหั่นท่อนๆ<br>
+            หน่อไม้สด 2 หน่อ<br> มะเขือเปราะ นำมาหั่นซีก 2 ลูก<br>
+            ส้มแขก 1 ลูก นำมหั่นเป็นแผ่นๆ ประมาณ 3 แผ่น<br> ใบมะกรูด 4-5 ใบ นำมาฉีก<br>
+            ฟักทอง นำมาหั่นชิ้นขนาดพอดีคำ 1 จาน<br> พริกแห้งเม็ดใหญ่ 4-5 เม็ด<br>
+            พริกขี้หนูสวน 10 เม็ด<br> น้ำมะขามเปียก 2 ช้อนโต้ะ<br> ข่า 1 หัว นำมาหั่นเล็กๆ<br>
+            ตะไคร้ 1 ต้น นำมาซอย<br> ผิวมะกรูด 1 ช้อนโต๊ะ<br> พริกไทยป่น 1 ช้อนโต้ะ<br>
+            กระเทียม 3-4 กลีบ<br> หอมหัวแดง 2-3 หัว<br> ขมิ้น 1 แง่ง นำมาซอย<br>
+            กะปิ 2 ช้อนโต๊ะ<br> เกลือป่น 1 ช้อนชา<br> น้ำเปล่าประมาณ 1 หม้อต้ม สำหรับทำน้ำแกง<br>
+          </p>
+          <br>วิธีทำแกงไตปลา
+          <p>
+            - เริ่มจากการล้างปลาดุกให้สะอาด จากนั้นนำมานึ่งให้สุก จากนั้นนำมาแกะเอาเฉพาะเนื้อปลาดุก จากนั้น พักเอาไว้ก่อน<br>
+            - เตรียมทำพริกแกง โดย ใช้ พริกแห้ง พริกขี้กนูสวน ข่า ตะไคร้ ผิวมะกรูด พริกไทย กระเทียม หอมแดง ขมิ้น กะปิ และ เกลือ นำมาโขรกให้ละเอียดเป็นเนื้อเดียวกัน และนำมาคลุกเคล้ากับเนื้อปลาดุก
+            <br>- เริ่มต้มน้ำให้เดือด จากนั้นใส่ พริกแกงลงไปต้ม จากนั้นใส่ หน่อไม้ลงไปต้มพร้อมกับไตปลา เคี้ยวไปเรื่อยๆ จนหน่อไม้สด อ่อนตัว จนรับประทานได้<br>
+            - ให้ใส่ ส้มแขก และ ฟักทอง ลงไปต้มต่อจนฟักทองสุกได้ที่<br>
+            - จึงปรุงรสด้วยน้ำมะขามเปียก และ ใส่ มะเขือเปราะ กับ ถั่วฝักยาวลงไป เมื่อมะเขือสุกได้ที่ ก็ปิดไฟ เสริฟ พร้อมรับประทานได้<br>
+          </p>
+        </div>
+      </div>
+      <div id="p4">
+        <h3>อาหารภาคเหนือ</h3>
+        <img src="https://i.pinimg.com/originals/40/bb/a9/40bba9132894109804582896c268a87f.jpg" 
+        height="300px" width="600" onclick="myFunction4()" id="myBtn4">
+        <!-- <span id="dots">...</span> -->
+        <div id="more4">
+          <br><br><h4> ต้มแซ่บหมู </h4>
+          ส่วนผสมสำหรับทำต้มแซ่บหมู
+          <p>
+            เนื้อหมูและเครื่องในหมู 1 ถ้วย<br>
+            ข่าหั่นบางๆ 3 ชิ้น<br>
+            มะเขือหั่น  1 หัว<br>
+            ตะไคร้ หั้น 1 ต้น<br>
+            ใบมะกรูด 2 ใบ<br>
+            น้ำมะนาว 2 ช้อนโต้ะ<br>
+            น้ำปลา 1 ช้อนโต้ะ<br>
+            ผงรสดี 1 ช้อนชา<br>
+            พริก 1 ช้อนโต้ะ<br>
+          </p>
+          <br>วิธีทำต้มแซบหมู
+          <p>
+            - ต้มข่ากับตะไคร้ 10 นาที<br>
+            - ใส่หมูและเครืองใน ต้มจนสุข<br>
+            - ใส่ มะเขือ ใบมะกรูด น้ำปลา พริก และ รสดี ต้มอีกสักพักแล้วใส่น้ำมะนาว<br>
+            - เสริฟ ใส่ชาม ทานกับข้าวเหนียวไก่ย่าง<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  function myFunction1() {
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+  
+    if (moreText.style.display === "none") {
+      moreText.style.display = "none";
+    } else {
+      moreText.style.display = "inline";
+    }
+  }
+  function myFunction2() {
+    var moreText = document.getElementById("more2");
+    var btnText = document.getElementById("myBtn2");
+  
+    if (moreText.style.display === "none") {
+      moreText.style.display = "none";
+    } else {
+      moreText.style.display = "inline";
+    }
+  }
+  function myFunction3() {
+    var moreText = document.getElementById("more3");
+    var btnText = document.getElementById("myBtn3");
+  
+    if (moreText.style.display === "none") {
+      moreText.style.display = "none";
+    } else {
+      moreText.style.display = "inline";
+    }
+  }
+  function myFunction4() {
+    var moreText = document.getElementById("more4");
+    var btnText = document.getElementById("myBtn4");
+  
+    if (moreText.style.display === "none") {
+      moreText.style.display = "none";
+    } else {
+      moreText.style.display = "inline";
+    }
+  }
+  </script>

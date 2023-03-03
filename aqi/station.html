@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div style="margin-top: 20px; text-align: center;">
+        <h3>Station</h3>
+        <select id="station">
+            <option value="1">a</option>
+            <option value="2">b</option>
+            <option value="3">c</option>
+            <option value="4">d</option>
+            <option value="5">e</option>
+        </select><br>
+        <p id="textPM">0</p>
+        <button onclick="randomPM()">On</button>
+        <button onclick="stop()">Off</button><br>
+        <button onclick="ToDash()">station</button>
+    </div>
+</body>
+</html>
+
+<script>
+var fn = null;
+function randomPM(){
+    fn = setInterval(function(){
+        let stt = document.getElementById('station').value
+        pm25 = Math.floor(Math.random() * 350)
+        document.getElementById('textPM').innerHTML = pm25
+        fetch('sensor.php?pm25='+ pm25 +"&id="+ stt)
+            .then(response => response.json())
+            .then(data => console.log(data));
+    },5000)
+}
+function stop(){
+    clearInterval(fn)
+}
+function ToDash(){
+    window.location.href = ('dashboard.html')
+}
+</script>

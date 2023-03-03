@@ -1,0 +1,91 @@
+<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script>
+    var data
+    var info
+    window.onload = function(){
+        exec()
+    }
+    async function exec(){
+        Urlresource = "movies.json"
+        try{
+            const response = await fetch(Urlresource,{
+                method: "GET",
+                headers: {"Content-Type":"application/text"}
+            })
+            if(!response.ok){
+                const message = "Error "+ response.status
+                throw new Error(message)
+            }
+            const data = await response.text()
+            n = JSON.parse(data)
+            index = 2300
+            console.log("data : "+ n.length)
+
+            for(let i=2001; i<2023; i++){ // option ของ year_movie เลือกปี
+                document.getElementById("year_movie").innerHTML += 
+                    "<option value='"+ i +"'>"+ i +"</option>"
+            }
+            $("#year_movie").on("change",function(){ // เมื่อเลือก year_movie
+                var selectValue = $(this).val()
+                console.log(selectValue)
+                
+                document.getElementById("movie").innerHTML = ""
+                for(let x in n){
+                    if(n[x].year == selectValue){
+                        document.getElementById("movie").innerHTML +=
+                            "<option value='"+ n[x].title +"'>"+ n[x].title +"</option>"
+                    }
+                }
+            })
+            $("#movie").on("change",function(){
+                var selectValue2 = $(this).val()
+                console.log(selectValue2)
+                for(let x in n){
+                    if(n[x].title == selectValue2){
+                        document.getElementById("titleANyear").value = n[x].year+" : "+n[x].title
+                        document.getElementById("txtArea").value = n[x].cast
+                        document.getElementById("genres").value = n[x].genres
+                    }
+                }
+            })
+            
+        }catch(err){
+            console.log("Error : "+ err)
+        }
+    }
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: auto;
+            width: 300px;
+        }
+        select{
+            margin: 5px;
+            padding: 2px;
+            width: 200px;
+        }
+        input{
+            margin: 5px;
+            padding: 2px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <select id="year_movie"></select>
+        <select id="movie"></select>
+        <input type="text" id="titleANyear">
+        <textarea id="txtArea" cols="28" rows="10"></textarea>
+        <input type="text" id="genres">
+    </div>
+    
+</body>
+</html>

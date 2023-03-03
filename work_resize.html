@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>Resize</title>
+    <style>
+        .header{
+            padding: 40px;
+            text-align: center;
+            background-color: lightgray;
+        }
+        .nav{
+            margin-top: 10px;
+            overflow: hidden;
+            background-color: rgb(78, 78, 78);
+        }
+        .nav a{
+            display: block;
+            background-color: none;
+            color: white;
+            float: left;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+        .nav a:hover{
+            background-color: rgb(66, 66, 66);
+        }
+        
+        .target{
+            padding: 20px;
+        }
+        .target > div{
+            display: none;
+        }
+        .target > div:target{
+            display: block;
+        }
+        .row::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .col{
+            margin: 2% 1% 0% 1%;
+            float: left;
+            width: 23%;
+        }
+        @media screen and (max-width:800px) and (min-width:480px) {
+            .col{
+                margin: 2% 1% 0% 1%;
+                width: 47%;
+            }
+        }
+        @media screen and (max-width:240px) {
+            .col{
+                margin: 2% 0% 0% 0%;
+                /* float: left; */
+                width: 99%;
+            }
+        }
+        .footer{
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+            background-color: rgb(78, 78, 78);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Header</h1>
+    </div>
+    <div class="nav">
+        <a href="https://www.pinterest.com/pin/68743328797/">
+            <img src="https://i.pinimg.com/564x/75/f3/50/75f3507c14ac2807e5bcba72e3e6133b.jpg" width="20px">
+        </a>
+        <a href="https://www.pinterest.com/pin/4925880834436962/">
+            <img src="https://i.pinimg.com/564x/0c/fe/e5/0cfee56d750d4d592b03d64575aff2ff.jpg" width="20px">
+        </a>
+        <a href="#">link 1</a>
+        <a href="#">link 2</a>
+        <a href="#page1">inPage 1</a>
+        <a href="#page2">inPage 2</a>
+        <a href="#page3">inPage 3</a>
+        <a href="#page4">inPage 4</a>
+    </div>
+    <div class="target">
+        <div id="page1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi numquam sint pariatur? Aperiam vel similique nulla quod possimus! Tempora, facere.
+        </div>
+        <div id="page2">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis non ullam dolor consequuntur quam, deserunt perferendis vero eaque voluptate repellat.
+        </div>
+        <div id="page3">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias optio molestiae explicabo unde similique facilis facere tempora animi in rem.
+        </div>
+        <div id="page4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione recusandae quae doloribus, earum numquam tempora aspernatur tempore officiis nostrum placeat!
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <iframe width="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
+        <div class="col">
+            <iframe width="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
+        <div class="col">
+            <iframe width="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
+        <div class="col">
+            <iframe width="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>footer</h2>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1 style="text-align: center;">Suteera Sunakorn</h1>
+  <p style="text-align: center;">Sec.1 6506021410020</p>
+  <br><hr>
+  <div style="text-align: center;">
+    <div>
+      <button onclick="back()">Back</button>
+      <button onclick="playPuase()">Play</button>
+      <button onclick="makeBig()">Big</button>
+      <button onclick="makeSmall()">Small</button>
+      <button onclick="makeNormal()">Normal</button>
+      <button onclick="next()">Next</button>
+      <br><br>
+      <video id="video1" width="420">
+        <source src="video1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div>
+    <script>
+      var myVideo = document.getElementById("video1");
+      function playPuase(){
+        if(myVideo.paused){
+          myVideo.play();
+        }else{
+          myVideo.pause();
+        }
+      }
+      function makeBig(){
+        myVideo.width = 800
+      }
+      function makeSmall(){
+        myVideo.width = 320
+      }
+      function makeNormal(){
+        myVideo.width = 420
+      }
+      function next(){
+        if(myVideo.src = "video1.mp4"){
+          myVideo.src = "video2.mp4";
+        }
+      }
+      function back(){
+        if(myVideo.src = "video2.mp4"){
+          myVideo.src = "video1.mp4";
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>
